@@ -13,19 +13,21 @@
 #  #
 class Raindrops
   class << self
+    SPECIAL_FACTORS = {
+      3 => 'Pling',
+      5 => 'Plang',
+      7 => 'Plong',
+    }
+
     def convert(num)
-      @prime_factors = [1]
-      prime_factors = fetch_prime_factors(num)
-      to_string(num, prime_factors)
+      special_factors_in_num = factors_included_in(num)
+      to_string(num, special_factors_in_num)
     end
 
-
-    private
-
-    def to_string(num, prime_factors)
-      return num.to_s if (special_cases = prime_factors & [3,5,7]).empty?
+    def to_string(num, special_factors_in_num)
+      return num.to_s if special_factors_in_num.empty?
       string = ""
-      special_cases.each do |prime|
+      special_factors_in_num.each do |prime|
         string << if prime == 3
           'Pling'
         elsif prime == 5
@@ -37,14 +39,14 @@ class Raindrops
       string
     end
 
-    def fetch_prime_factors(num)
-      [2,3,5,7].each do |prime|
+    def factors_included_in(num)
+      special_factors_in_num = []
+      SPECIAL_FACTORS.keys.each do |prime|
         if num % prime == 0
-          @prime_factors << prime
-          fetch_prime_factors(num / prime)
+          special_factors_in_num << prime
         end
       end
-      @prime_factors
+      special_factors_in_num
     end
   end
 end
