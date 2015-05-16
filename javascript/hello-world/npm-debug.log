@@ -1,0 +1,54 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'jasmine-node', '-g' ]
+2 info using npm@2.0.0-alpha-5
+3 info using node@v0.10.29
+4 verbose node symlink /usr/local/bin/node
+5 verbose cache add [ 'jasmine-node', null ]
+6 verbose cache add spec="jasmine-node" args=["jasmine-node",null]
+7 verbose parsed spec { raw: 'jasmine-node',
+7 verbose parsed spec   scope: null,
+7 verbose parsed spec   name: 'jasmine-node',
+7 verbose parsed spec   rawSpec: '',
+7 verbose parsed spec   spec: '*',
+7 verbose parsed spec   type: 'range' }
+8 verbose addNamed [ 'jasmine-node', '*' ]
+9 verbose addNamed [ null, '*' ]
+10 silly lockFile b33f7935-jasmine-node jasmine-node@*
+11 verbose lock jasmine-node@* /Users/abhi/.npm/b33f7935-jasmine-node.lock
+12 silly addNameRange { name: 'jasmine-node', range: '*', hasData: false }
+13 verbose mapToRegistry name jasmine-node
+14 verbose mapToRegistry uri http://npm-registry.snc1/jasmine-node
+15 verbose request where is /jasmine-node
+16 verbose request registry http://npm-registry.snc1/
+17 verbose request id cb1673067a160743
+18 verbose request url raw /jasmine-node
+19 verbose request url resolving [ 'http://npm-registry.snc1/', './jasmine-node' ]
+20 verbose request url resolved http://npm-registry.snc1/jasmine-node
+21 verbose request where is http://npm-registry.snc1/jasmine-node
+22 verbose request no basic auth needed
+23 info trying registry request attempt 1 at 17:44:55
+24 http GET http://npm-registry.snc1/jasmine-node
+25 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+26 info trying registry request attempt 2 at 17:45:05
+27 http GET http://npm-registry.snc1/jasmine-node
+28 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+29 info trying registry request attempt 3 at 17:46:05
+30 http GET http://npm-registry.snc1/jasmine-node
+31 silly lockFile b33f7935-jasmine-node jasmine-node@*
+32 silly lockFile b33f7935-jasmine-node jasmine-node@*
+33 error network getaddrinfo ENOTFOUND
+33 error network This is most likely not a problem with npm itself
+33 error network and is related to network connectivity.
+33 error network In most cases you are behind a proxy or have bad network settings.
+33 error network
+33 error network If you are behind a proxy, please make sure that the
+33 error network 'proxy' config is set properly.  See: 'npm help config'
+34 error System Darwin 13.4.0
+35 error command "node" "/usr/local/bin/npm" "install" "jasmine-node" "-g"
+36 error cwd /Users/abhi/exercism/javascript/hello-world
+37 error node -v v0.10.29
+38 error npm -v 2.0.0-alpha-5
+39 error syscall getaddrinfo
+40 error code ENOTFOUND
+41 error errno ENOTFOUND
+42 verbose exit [ 1, true ]
