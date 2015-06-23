@@ -17,15 +17,24 @@ var matcher = {
     for(i=0; i < candidates.length; i++) {
       var match = true;
       var candidate = candidates[i].toLowerCase();
+      var word_indices = [];
 
-      for(x=0; x < word_to_match.length; x++) {
-        if(word_to_match.length !== candidate.length) {
-          match = false;
-        }
-        if(match) {
+      if(word_to_match === candidate ||
+         word_to_match.length !== candidate.length) {
+        match = false;
+      }
+
+      while(match && word_indices.length < word_to_match.length) {
+        for(x=0; x < word_to_match.length; x++) {
           index = candidate.indexOf(word_to_match[x]);
-          if(word_to_match === candidate || index === -1) {
+          if(index === -1) {
             match = false;
+          } else {
+            if(word_indices.indexOf(index) === -1) {
+              word_indices.push(index);
+            } else {
+              match = false;
+            }
           }
         }
       }
